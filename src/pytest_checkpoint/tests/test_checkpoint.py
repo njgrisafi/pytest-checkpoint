@@ -65,7 +65,7 @@ def test_simple_pass(pytester: Pytester, collect_behavior: CollectBehavior) -> N
         collect_behavior,
         "test_pass.py",
     )
-    result.ret == pytest.ExitCode.OK
+    assert result.ret == pytest.ExitCode.OK
     lap_out = Path(pytester.path).joinpath("lap-test.json")
     assert lap_out.exists()
     lap = Lap.decode(json.loads(lap_out.read_text()))
@@ -108,7 +108,7 @@ def test_xfail(pytester: Pytester, collect_behavior: CollectBehavior) -> None:
         collect_behavior,
         "test_xfail.py",
     )
-    result.ret == pytest.ExitCode.OK
+    assert result.ret == pytest.ExitCode.OK
     lap_out = Path(pytester.path).joinpath("lap-test.json")
     assert lap_out.exists()
     lap = Lap.decode(json.loads(lap_out.read_text()))
