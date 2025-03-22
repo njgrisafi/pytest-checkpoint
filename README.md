@@ -32,11 +32,18 @@ pip install pytest-checkpoint
 ## Usage
 
 To use `pytest-checkpoint`, you need to add options to your pytest configuration. You can do this by adding the following lines to your `pytest.ini` or directly in the command line:
-
 ```ini
 [pytest]
-lap_out = .pytest_checkpoint/lap.json
-collect_behavior = deselect  # or skip
+addopts =
+    -p pytest_checkpoint
+    --lap-out .pytest_checkpoint/lap.json
+    --collect-behavior skip
+```
+
+or
+
+```bash
+pytest -p pytest_checkpoint --lap-out .pytest_checkpoint/lap.json --collect-behavior skip
 ```
 
 ### Command Line Options
@@ -66,7 +73,7 @@ We welcome contributions from the community! To contribute to `pytest-checkpoint
 
 ## License
 
-`pytest-checkpoint` is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+`pytest-checkpoint` is licensed under the MIT License. See the [LICENSE](https://raw.githubusercontent.com/njgrisafi/pytest-checkpoint/refs/heads/main/LICENSE) file for more details.
 
 ## Authors
 
