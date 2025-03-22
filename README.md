@@ -1,7 +1,7 @@
 # pytest-checkpoint
 
 <!-- <img src="./docs/logo.png" alt="pytest-checkpoint Logo" width="250" /> -->
-<img src="https://i.postimg.cc/wMKBDZ79/logo.webp" alt="pytest-checkpoint Logo" width="250" />
+![pytest-checkpoint Logo](https://i.postimg.cc/pdHQ2c25/logo.png)
 
 ## Overview
 
