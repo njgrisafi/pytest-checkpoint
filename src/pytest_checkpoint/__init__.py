@@ -10,7 +10,7 @@ if TYPE_CHECKING:
     from pytest import Config, Parser
 
 
-_DEFAULT_LAP_OUT = "lap.json"
+_DEFAULT_LAP_OUT = ".pytest_checkpoint/lap.json"
 
 
 def pytest_addoption(parser: Parser) -> None:
@@ -28,7 +28,9 @@ def pytest_addoption(parser: Parser) -> None:
         CheckpointPluginOpts.COLLECT_BEHAVIOR,
         action="store",
         default=CollectBehavior.DESELECT,
-        choices=CollectBehavior,
+        # NOTE: In python 3.11, the choices argument is not supported for enums
+        # We must convert it to a list of strings
+        choices=list(CollectBehavior),
         help="This will determine how tests are collected when a checkpoint is restored",
     )
 

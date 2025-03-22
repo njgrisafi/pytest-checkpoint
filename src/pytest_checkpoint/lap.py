@@ -57,7 +57,7 @@ class Lap:
         }
 
     @classmethod
-    def decode(cls, data: dict) -> Lap:
+    def decode(cls, data: dict[str, list[str]]) -> Lap:
         """Decode a dictionary into a Lap object.
 
         Args:

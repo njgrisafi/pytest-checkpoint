@@ -31,5 +31,5 @@ MANIFEST
 .venv
 .vscode
 
-# pytest-checkpoint
-lap.json
+# pytest-checkpoint output
+.pytest_checkpoint/

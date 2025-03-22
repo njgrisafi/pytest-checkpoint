@@ -122,4 +122,5 @@ class CheckpointPlugin:
         This will write the lap info to the output file.
         """
         self.logger.debug("Creating checkpoint to %s", self.lap_file)
+        self.lap_file.parent.mkdir(parents=True, exist_ok=True)
         self.lap_file.write_text(json.dumps(self.lap.encode()))
