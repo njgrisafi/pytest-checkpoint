@@ -1,6 +1,6 @@
 [project]
 name = "pytest-checkpoint"
-version = "0.1.1"
+version = "0.1.2"
 description = "Restore a checkpoint in pytest"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -21,7 +21,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "pytest>=8.3.5",
+    "pytest>=8.0.0",
 ]
 
 [dependency-groups]
