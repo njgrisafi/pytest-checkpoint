@@ -1,6 +1,6 @@
 [project]
 name = "pytest-checkpoint"
-version = "0.1.2"
+version = "0.1.3"
 description = "Restore a checkpoint in pytest"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -26,8 +26,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "mypy==1.15.0",
-    "ruff==0.11.2",
+    "mypy==1.18.2",
+    "ruff==0.13.3",
 ]
 
 [build-system]

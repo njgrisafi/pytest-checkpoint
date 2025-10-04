@@ -89,7 +89,7 @@ class CheckpointPlugin:
         # This is not handled in the internal 'TestReport.from_item_and_call' method
         is_unittest_expected_failure = report.keywords.get("__unittest_expecting_failure__", 0) == 1
 
-        if report.when == RunTestPhase.SETUP:
+        if report.when == RunTestPhase.SETUP.value:
             if report.failed and is_unittest_expected_failure is False:
                 self.lap.mark_failed(report.nodeid)
             elif report.skipped and (hasattr(report, "wasxfail") or is_unittest_expected_failure):
@@ -100,7 +100,7 @@ class CheckpointPlugin:
 
             return None
 
-        if report.when == RunTestPhase.CALL:
+        if report.when == RunTestPhase.CALL.value:
             if report.skipped or report.passed:
                 self.lap.mark_passed(report.nodeid)
 
@@ -111,7 +111,7 @@ class CheckpointPlugin:
 
             return None
 
-        if report.when == RunTestPhase.TEARDOWN:
+        if report.when == RunTestPhase.TEARDOWN.value:
             if report.failed and is_unittest_expected_failure is False:
                 self.lap.mark_failed(report.nodeid)
             self._checkpoint()
