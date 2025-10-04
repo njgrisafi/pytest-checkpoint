@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.3] - 2025-10-03
 
 ### Fixed
--  comparsion overlap type errors 
+-  comparison overlap type errors
 
 ## [0.1.2] - 2025-03-29
 
