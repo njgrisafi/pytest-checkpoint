@@ -1,6 +1,6 @@
 [project]
 name = "pytest-checkpoint"
-version = "1.2.3"
+version = "1.1.4"
 description = "Restore a checkpoint in pytest"
 license = "MIT"
 license-files = ["LICENSE"]
