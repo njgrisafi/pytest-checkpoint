@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: "0.6.9"
-      - name: Set up Python 3.11.8
-        uses: actions/setup-python@v5
+          version: "0.13.6"
+      - name: Set up Python 3.12.16
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.11.8"
+          python-version: "3.12.16"
       - name: lint
         run: uv run ruff check .
       - name: format
@@ -29,17 +29,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - name: Set up Python 3.11.8
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.12.16
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.11.8"
+          python-version: "3.12.16"
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: "0.6.9"
+          version: "0.13.6"
       - name: typecheck
         run: uv run mypy .
 
@@ -49,20 +49,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.11.18", "3.12.16", "3.13.18"]
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: "0.6.9"
+          version: "0.13.6"
       - name: test
         run: uv run pytest
 
@@ -71,16 +71,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - name: Set up Python 3.11.8
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.12.16
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.11.8"
+          python-version: "3.12.16"
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: "0.6.9"
+          version: "0.13.6"
       - name: lockfile
         run: uv sync --locked
